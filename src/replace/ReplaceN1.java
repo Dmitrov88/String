@@ -18,7 +18,7 @@ public class ReplaceN1 {
 	 */
 	public static void main(String[] args) {
 		
-		String s = "    Мамамама мыла мылом мраморные м";
+		String s = "    Mamamamama mama lerooooooy activity soap";
 		s=s.trim();
         int k = 5;
         String symbol = "*";
@@ -26,7 +26,7 @@ public class ReplaceN1 {
         String[] words = s.split(" ");
         String result = "";
         
-     // без использования стринг-билдера
+     // no string builder
         for (String w : words ) {
         	result = result+ReplaceN1.replace(w, k, symbol);
         	result += " ";
@@ -35,7 +35,7 @@ public class ReplaceN1 {
         System.out.println(result);
         
         
-     // с использованием стрингбилдера     
+     // with string builder   
         StringBuilder result1 = new StringBuilder();
         for (String w : words ) {
           result1.append(ReplaceN1.replace(w, k, symbol)).append(" ");
