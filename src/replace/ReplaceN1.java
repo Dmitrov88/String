@@ -13,32 +13,39 @@ public class ReplaceN1 {
 		return beg  + "*" + end;
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String s = "абвгде"
-				+ " иррри иррирр";
+		
+		String s = "    Мамамама мыла мылом мраморные м";
+		s=s.trim();
         int k = 5;
         String symbol = "*";
        
         String[] words = s.split(" ");
         String result = "";
         
+     // без использования стринг-билдера
         for (String w : words ) {
-        	result += ReplaceN1.replace(w, k, symbol);
+        	result = result+ReplaceN1.replace(w, k, symbol);
         	result += " ";
         }
-        
+        result=result.trim();
         System.out.println(result);
         
         
-                
-      //  for(int i = 0; i < s.length(); i++) {
-        	//char result = s.charAt(k);
-        //	System.out.println(s.replace(result, symbol));
-        	
-       // }
-
-	}
-
+     // с использованием стрингбилдера     
+        StringBuilder result1 = new StringBuilder();
+        for (String w : words ) {
+          result1.append(ReplaceN1.replace(w, k, symbol)).append(" ");
+        }
+        
+        System.out.println(result1.toString()); 
+      
+        
+   }
 }
-
+        
+        
+      
